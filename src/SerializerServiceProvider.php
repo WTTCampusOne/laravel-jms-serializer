@@ -1,12 +1,12 @@
 <?php
 
-namespace Motia\LaravelJMSSerializer;
+namespace Cone\LaravelJMSSerializer;
 
-use Motia\LaravelJMSSerializer\Commands\ClearSerializerCache;
-use Motia\LaravelJMSSerializer\Contracts\DataNormalizer;
-use Motia\LaravelJMSSerializer\Contracts\ResponseSerializer;
-use Motia\LaravelJMSSerializer\Services\JSendSerializer;
-use Motia\LaravelJMSSerializer\Services\JMSDataNormalizer;
+use Cone\LaravelJMSSerializer\Commands\ClearSerializerCache;
+use Cone\LaravelJMSSerializer\Contracts\DataNormalizer;
+use Cone\LaravelJMSSerializer\Contracts\ResponseSerializer;
+use Cone\LaravelJMSSerializer\Services\JSendSerializer;
+use Cone\LaravelJMSSerializer\Services\JMSDataNormalizer;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
@@ -32,9 +32,6 @@ class SerializerServiceProvider extends ServiceProvider
       ClearSerializerCache::class
     ]);
     AnnotationRegistry::registerLoader('class_exists');
-//        AnnotationRegistry::registerAutoloadNamespace(
-//            'JMS\Serializer\Annotation',
-//            base_path('vendor/jms/serializer/src'));
 
     $this->app->singleton(DataNormalizer::class, function (Application $app) {
       /** @var \Illuminate\Config\Repository $config */

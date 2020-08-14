@@ -1,13 +1,14 @@
 <?php
 
-namespace Motia\LaravelJMSSerializer\Services;
+namespace Cone\LaravelJMSSerializer\Services;
 
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\Handler\HandlerRegistry;
-use Motia\LaravelJMSSerializer\Contracts\DataNormalizer;
+use Cone\LaravelJMSSerializer\Contracts\DataNormalizer;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
+use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 
 class JMSDataNormalizer implements DataNormalizer
 {
@@ -37,6 +38,7 @@ class JMSDataNormalizer implements DataNormalizer
                     $registry->registerSubscribingHandler(new $serializer());
                 }
             })
+            ->setExpressionEvaluator(new ExpressionEvaluator(new ExpressionLanguage()))
             ->build();
     }
 
