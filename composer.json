@@ -5,7 +5,8 @@
     "name": "cone/laravel-jms-serializer",
     "license": "MIT",
     "require": {
-      "jms/serializer": "^3.0"
+        "jms/serializer": "^3.0",
+        "symfony/expression-language": "*"
     },
     "autoload": {
         "psr-4": {
