@@ -26,7 +26,7 @@ class UuidSerializer implements SubscribingHandlerInterface
      * serializes carbon object to ISO 8601 string for JSON
      * serialization
      *
-     * @param XmlSerializationVisitor $visitor
+     * @param JsonSerializationVisitor $visitor
      * @param Uuid $uuid
      * @param array $type
      * @param Context $context
@@ -39,6 +39,6 @@ class UuidSerializer implements SubscribingHandlerInterface
         array $type,
         Context $context
     ) {
-        return $visitor->visitString($uuid->toString(), $type, $context);
+        return $visitor->visitString($uuid->toString(), $type);
     }
 }

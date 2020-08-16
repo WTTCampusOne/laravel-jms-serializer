@@ -3,6 +3,7 @@
 namespace Cone\LaravelJMSSerializer\Serializer;
 
 use Carbon\Carbon;
+use DateTime;
 use JMS\Serializer\Context;
 use JMS\Serializer\GraphNavigator;
 use JMS\Serializer\Handler\SubscribingHandlerInterface;
@@ -16,7 +17,7 @@ class CarbonSerializer implements SubscribingHandlerInterface
       [
         'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
         'format'    => 'json',
-        'type'      => \DateTime::class,
+        'type'      => DateTime::class,
         'method'    => 'serializeDateTime',
       ],
       [
@@ -28,31 +29,39 @@ class CarbonSerializer implements SubscribingHandlerInterface
       [
         'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
         'format'    => 'json',
-        'type'      => \Carbon\Carbon::class,
+        'type'      => Carbon::class,
         'method'    => 'serializeCarbon',
       ],
     ];
   }
 
-  /**
-   * Serialize \DateTime object to ISO to browser format
-   *
-   * @return String
-   */
-   public function serializeDateTime(
+    /**
+     * Serialize \DateTime object to ISO to browser format
+     *
+     * @param JsonSerializationVisitor $visitor
+     * @param DateTime $dateTime
+     * @param array $type
+     * @param Context $context
+     * @return String
+     */
+   public function serializeDateTime (
     JsonSerializationVisitor $visitor,
-    \DateTime $dateTime,
+    DateTime $dateTime,
     array $type,
     Context $context
   ) {
     return $this->serializeCarbon($visitor, Carbon::instance($dateTime), $type, $context);
   }
 
-  /**
-   * Serialize Carbon object to ISO to browser format
-   *
-   * @return String
-   */
+    /**
+     * Serialize Carbon object to ISO to browser format
+     *
+     * @param JsonSerializationVisitor $visitor
+     * @param Carbon $carbon
+     * @param array $type
+     * @param Context $context
+     * @return String
+     */
   public function serializeCarbon(
     JsonSerializationVisitor $visitor,
     Carbon $carbon,

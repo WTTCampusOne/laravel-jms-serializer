@@ -2,7 +2,6 @@
 
 namespace Cone\LaravelJMSSerializer\Serializer;
 
-
 use Illuminate\Pagination\LengthAwarePaginator;
 use JMS\Serializer\Context;
 use JMS\Serializer\GraphNavigator;

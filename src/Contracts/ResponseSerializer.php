@@ -6,7 +6,8 @@ namespace Cone\LaravelJMSSerializer\Contracts;
 interface ResponseSerializer
 {
     /**
-     * @param $obj
+     * @param null $data
+     * @param int $code
      * @param mixed $context
      * @return array
      */

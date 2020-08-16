@@ -2,6 +2,7 @@
 
 namespace Cone\LaravelJMSSerializer\Services;
 
+use JMS\Serializer\Expression\ExpressionEvaluator;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializationContext;
@@ -56,7 +57,7 @@ class JMSDataNormalizer implements DataNormalizer
         return $this->cacheDir;
     }
 
-    public function defaultContext (): SerializationContext{
+    public function defaultContext (): SerializationContext {
         return SerializationContext::create()->setGroups(['Default']);
     }
 }
