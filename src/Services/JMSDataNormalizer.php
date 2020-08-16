@@ -57,7 +57,7 @@ class JMSDataNormalizer implements DataNormalizer
         return $this->cacheDir;
     }
 
-    public function defaultContext (): SerializationContext{
+    public function defaultContext (): SerializationContext {
         return SerializationContext::create()->setGroups(['Default']);
     }
 }

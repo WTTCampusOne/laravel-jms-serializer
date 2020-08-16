@@ -1,6 +1,9 @@
 {
     "authors": [{
-        "name": "WTT-CampusOne GmbH"
+        "name": "WTT-CampusOne GmbH",
+        "email": "it@wtt-campusone.com",
+        "homepage": "https://www.wtt-campusone.com",
+        "role": "Developer"
     }],
     "name": "cone/laravel-jms-serializer",
     "license": "MIT",
@@ -16,7 +19,7 @@
     },
     "autoload-dev": {
         "classmap": [
-
+            "tests"
         ]
     },
     "extra": {
