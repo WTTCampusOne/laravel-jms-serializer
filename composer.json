@@ -5,6 +5,7 @@
         "homepage": "https://www.wtt-campusone.com",
         "role": "Developer"
     }],
+    "version": "0.1",
     "name": "cone/laravel-jms-serializer",
     "license": "MIT",
     "require": {
