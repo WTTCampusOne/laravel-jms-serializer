@@ -5,12 +5,13 @@
         "homepage": "https://www.wtt-campusone.com",
         "role": "Developer"
     }],
+    "description": "",
     "version": "0.1",
     "name": "cone/laravel-jms-serializer",
     "license": "MIT",
     "require": {
-        "jms/serializer": "^3.0",
-        "symfony/expression-language": "*",
+        "jms/serializer": "^3.8.0",
+        "symfony/expression-language": "5.1.3",
         "laravel/framework": "^7.0"
     },
     "autoload": {
